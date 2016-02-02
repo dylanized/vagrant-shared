@@ -1,4 +1,14 @@
-# FUNCTIONS
+# SET PATH
+
+	# set PATH so it includes user's private bin if it exists
+	if [ -d "$HOME/bin" ] ; then
+	    PATH="$HOME/bin:$PATH"
+	fi
+	
+# SET NVM DIR	
+		
+	export NVM_DIR="/home/vagrant/.nvm"
+	[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm	
 
 # VAGRANT HELPERS
 
@@ -7,6 +17,7 @@
 	alias app=vagrant
 	alias vagrant-shared='cd /home/vagrant-shared'
 	alias shared=vagrant-shared
+	alias xx=exit
 
 	alias ns='npm start'
 
@@ -415,4 +426,3 @@
 
 	cd /vagrant
 	l
-			
