@@ -20,6 +20,7 @@
 	alias xx=exit
 
 	alias ns='npm start'
+	alias nd='npm dev'
 
 # COLORS
 
@@ -421,6 +422,149 @@
 			npm run mocha -- test/[^_]*.js --bail
 		fi
 	}
+	
+# GIT HELPERS
+
+	# QUICK CHECKOUT
+	alias go='git checkout'
+	
+	# QUICK ADD
+	function ga() {
+		git add $*
+	}
+
+	# ADD ALL CHANGED AND NEW FILES
+	function gaa() {
+		git add -A
+	}
+	
+	# QUICK COMMIT
+	function gc() {
+		echo -e "\033[1m"
+		git commit -m "$*"
+		echo -e "" 
+	}
+	
+	# ADD TRACKED CHANGES, THEN COMMIT
+	function gac() {
+		echo -e "\033[1m"
+		git commit -am "$*"
+		echo -e ""
+	}
+	
+	# ADD TRACKED CHANGES, COMMIT, THEN PUSH
+	function gacp() {
+		echo -e "\033[1m"
+		git commit -am "$*"	
+		git push
+		echo -e ""
+	}
+	
+	# ADD ALL CHANGES, THEN COMMIT	
+	function c() {
+		echo -e "\033[1m"
+		git add -A
+		git commit -m "$*"
+		echo -e ""
+	}	
+
+	#  ADD ALL CHANGES, COMMIT, THEN PUSH	
+	function p() {
+		echo -e "\033[1m"
+		git add -A
+		git commit -m "$*"
+		git push
+		echo -e ""
+	}
+		
+	alias gp='git push'
+	
+	alias gpo='git push origin'
+	
+	alias push='git push'
+	alias pull='git pull'
+	
+	function gpa() {
+		echo -e "\033[1m"
+		git add -A
+		git commit -m "$*"
+		git push all master	
+		echo -e ""
+	}
+	
+	function gu() {
+		echo -e "\033[1m"
+		git remote update
+		echo -e ""		
+	}
+	
+	function gr() {
+		echo -e "\033[1m"
+		git remote "$*"
+		echo -e ""	
+	}
+
+	function gf() {
+		echo -e "\033[1m"
+		git fetch "$*"
+		echo -e ""	
+	}	
+
+	function grm() {
+		echo -e "\033[1m"
+		git rm "$*"
+		echo -e ""	
+	}	
+
+	function gmv() {
+		echo -e "\033[1m"
+		git mv "$*"
+		echo -e ""	
+	}
+			
+	alias u=gu
+	alias gd='git diff'		
+	alias gb='git branch'
+	alias gm="git merge"
+	alias gra='gr add'
+	
+	# GIT STATUS
+	function gs() {
+		echo -e "\033[1m"
+		git status -sb
+		echo -e ""
+	}	
+
+	alias g=gs
+	
+	function lg() {
+		l
+		gs
+	}
+
+	function gsd() {
+		gs
+		gd
+	}
+	
+	## RESET WORKING COPY TO HEAD, DELETE ALL CHANGES
+	function ghard() {
+		echo -e "\033[1m"
+		git reset --hard
+		echo -e ""	
+	}
+
+	# UNSTAGE COMMITS
+	function greset() {
+		echo -e "\033[1m"
+		git reset
+		echo -e ""		
+	}
+	
+	alias gitconfig="vim .gitconfig"
+	alias gitignore="vim .gitignore"
+	alias gconfig=gitconfig
+	alias gignore=gitignore	
 	
 # CHANGE TO APP DIR
 
