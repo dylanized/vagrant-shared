@@ -375,7 +375,7 @@
 	alias mog='mocha --grep'
 	alias cc='conventional-changelog -p angular -i CHANGELOG.md -w'
 	alias ccall='conventional-changelog -p angular -i CHANGELOG.md -w -r 0'
-	alias rlog='rm *.log'
+	alias rlog='rm *.log & rm npm-debug*.* &'
 	alias rl=rlog	
 	
 # N HELPER	
